@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escola Bíblica</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+    body{display:flex;min-height:100vh;background:#f3f0fa}
+
+    .sidebar{width:230px;background:linear-gradient(180deg,#5b4bc4,#7a6be6);color:#fff;padding:20px;display:flex;flex-direction:column;gap:15px}
+    .menu-item{cursor:pointer;padding:10px;border-radius:10px;transition:.3s}
+    .menu-item:hover{background:rgba(255,255,255,.2)}
+    .submenu{display:none;margin-left:10px}
+    .submenu a{display:block;padding:8px;color:#fff;text-decoration:none;font-size:14px}
+
+    .main{flex:1;padding:20px}
+    .header h1{font-size:24px}
+    .header p{color:#666;margin-bottom:20px}
+
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+    .card{background:#fff;padding:15px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.05)}
+
+    .ranking{margin-top:25px}
+    .ranking h2{margin-bottom:15px}
+
+    .student{background:#fff;padding:12px;border-radius:12px;margin-bottom:10px}
+    .student strong{display:block;margin-bottom:5px;color:#5b4bc4}
+    .student small{color:#555}
+
+    .calendar{margin-top:25px;background:#fff;padding:15px;border-radius:15px}
+    .calendar header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .calendar table{width:100%;border-collapse:collapse}
+    .calendar th,.calendar td{text-align:center;padding:8px}
+    .calendar td{cursor:pointer;border-radius:8px}
+    .calendar td:hover{background:#eee}
+    .today{background:#5b4bc4;color:#fff}
+.card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+    @media(max-width:768px){body{flex-direction:column}.sidebar{width:100%}}
+  </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="menu-item" onclick="toggleMenu(this)">Professores ▾
+    <div class="submenu">
+      <a href="#">Lista</a>
+      <a href="#">Adicionar</a>
+    </div>
+  </div>
+<!--
+  <div class="menu-item" onclick="toggleMenu(this)">Alunos ▾
+    <div class="submenu">
+      <a href="#">Ranking</a>
+      <a href="#">Presença</a>
+    </div>
+  </div>
+-->
+  <div class="menu-item" onclick="toggleMenu(this)">Lição ▾
+    <div class="submenu">
+      <a href="conteudo.html">Conteúdo</a>
+      <a href="atividades.html">Atividades</a>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="header">
+    <h1>Escola Bíblica</h1>
+    <p>Classe Jovens</p>
+  </div>
+
+  <div class="cards">
+    <div class="card"><img src="perfil.jpg" alt="Aluno"><h2>JÚLIA</h2><div class="info"> <p>📅 Presenças: 0 </p> <p>❌ Faltas:0 </p> <p>📝 Atividades: 0</p><p>📖 Bíblia: 0</p><p>⭐ Participação: 0</p></div><div class="total">TOTAL: 0 pts</div></div>
+
+        
+    </p></div>
+    <div class="card"><img src="perfil.jpg" alt="Aluno"><h2>VITORIA</h2><div class="info"> <p>📅 Presenças: 0 </p> <p>❌ Faltas:0 </p> <p>📝 Atividades: 0</p><p>📖 Bíblia: 0</p><p>⭐ Participação: 0</p></div><div class="total">TOTAL: 0 pts</div></div>
+  </div>
+
+  <div class="ranking">
+    <h2>Leitura da Semana</h2>
+
+    <div class="student">
+      <strong>SEGUNDA</strong>
+      Tema: Doutrinas que são preceitos dos homens<br>
+      <small>Mateus 15:9</small><br>
+      “Em vão me adoram, ensinando doutrinas que são preceitos dos homens.”
+    </div>
+
+    <div class="student">
+      <strong>TERÇA</strong>
+      Tema: Na vida cristã a luta espiritual é real<br>
+      <small>Efésios 6:12</small><br>
+      “Porque a nossa luta não é contra carne e sangue, mas contra principados e potestades.”
+    </div>
+
+    <div class="student">
+      <strong>QUARTA</strong>
+      Tema: A loucura da sabedoria humana<br>
+      <small>1 Coríntios 1:18</small><br>
+      “A palavra da cruz é loucura para os que perecem, mas para nós é o poder de Deus.”
+    </div>
+
+    <div class="student">
+      <strong>QUINTA</strong>
+      Tema: Contra os ventos de doutrina<br>
+      <small>Efésios 4:14</small><br>
+      “Para que não sejamos levados ao redor por todo vento de doutrina.”
+    </div>
+
+    <div class="student">
+      <strong>SEXTA</strong>
+      Tema: Cuidado com as falsas ciências<br>
+      <small>1 Timóteo 6:20</small><br>
+      “Evita os falatórios inúteis e as contradições do saber, como falsamente lhe chamam.”
+    </div>
+
+    <div class="student">
+      <strong>SÁBADO</strong>
+      Tema: Buscando a renovação da mente<br>
+      <small>Romanos 12:2</small><br>
+      “Transformai-vos pela renovação da vossa mente.”
+    </div>
+  </div>
+
+  <div class="calendar">
+    <header>
+      <button onclick="prevMonth()">◀</button>
+      <h3 id="monthYear"></h3>
+      <button onclick="nextMonth()">▶</button>
+    </header>
+    <table>
+      <thead>
+        <tr><th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th></tr>
+      </thead>
+      <tbody id="calendarBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+function toggleMenu(el){
+  const submenu = el.querySelector('.submenu');
+  submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+}
+
+let date = new Date();
+function renderCalendar(){
+  const monthYear = document.getElementById('monthYear');
+  const calendarBody = document.getElementById('calendarBody');
+
+  const year = date.getFullYear();
+  const month = date.getMonth();
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const lastDate = new Date(year, month+1, 0).getDate();
+
+  monthYear.innerText = date.toLocaleString('pt-BR',{month:'long',year:'numeric'});
+  calendarBody.innerHTML = '';
+
+  let row = document.createElement('tr');
+
+  for(let i=0;i<firstDay;i++) row.appendChild(document.createElement('td'));
+
+  for(let d=1; d<=lastDate; d++){
+    let cell = document.createElement('td');
+    cell.innerText = d;
+
+    const today = new Date();
+    if(d===today.getDate() && month===today.getMonth() && year===today.getFullYear()){
+      cell.classList.add('today');
+    }
+
+    row.appendChild(cell);
+
+    if(row.children.length===7){
+      calendarBody.appendChild(row);
+      row = document.createElement('tr');
+    }
+  }
+
+  calendarBody.appendChild(row);
+}
+
+function prevMonth(){ date.setMonth(date.getMonth()-1); renderCalendar(); }
+function nextMonth(){ date.setMonth(date.getMonth()+1); renderCalendar(); }
+
+renderCalendar();
+</script>
+
+</body>
+</html>

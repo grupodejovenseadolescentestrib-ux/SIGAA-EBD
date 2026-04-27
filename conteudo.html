@@ -5,30 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <title>Conteúdo - Escola Bíblica</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-    body{display:flex;min-height:100vh;background:#f3f0fa}
+ <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{display:flex;min-height:100vh;background:#f3f0fa}
 
-    .sidebar{width:230px;background:linear-gradient(180deg,#5b4bc4,#7a6be6);color:#fff;padding:20px;display:flex;flex-direction:column;gap:15px}
-    .menu-item{cursor:pointer;padding:10px;border-radius:10px}
-    .menu-item:hover{background:rgba(255,255,255,.2)}
-    a{color:#fff;text-decoration:none}
+.sidebar{
+width:230px;
+background:linear-gradient(180deg,#5b4bc4,#7a6be6);
+color:#fff;
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:15px
+}
 
-    .main{flex:1;padding:20px}
-    .header h1{font-size:24px}
-    .header p{color:#666;margin-bottom:20px}
+.menu-item{
+cursor:pointer;
+padding:10px;
+border-radius:10px
+}
 
-    .card{background:#fff;padding:20px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.05);margin-bottom:20px}
+.menu-item:hover{
+background:rgba(255,255,255,.2)
+}
 
-    h2{color:#5b4bc4;margin-bottom:10px}
-    h3{margin-top:15px;margin-bottom:8px;color:#444}
-    p{margin-bottom:10px;color:#333;line-height:1.5}
+a{
+color:#fff;
+text-decoration:none
+}
 
-    ul{margin-left:20px;margin-top:10px}
-    li{margin-bottom:8px}
+.main{
+flex:1;
+padding:20px
+}
 
-    @media(max-width:768px){body{flex-direction:column}.sidebar{width:100%;flex-direction:row;justify-content:space-around}}
-  </style>
+.header h1{
+font-size:24px
+}
+
+.header p{
+color:#666;
+margin-bottom:20px
+}
+
+.card{
+background:#fff;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+margin-bottom:20px
+}
+
+h2{
+color:#5b4bc4;
+margin-bottom:10px
+}
+
+h3{
+margin-top:15px;
+margin-bottom:8px;
+color:#444
+}
+
+p{
+margin-bottom:10px;
+color:#333;
+line-height:1.5
+}
+
+ul{
+margin-left:20px;
+margin-top:10px
+}
+
+li{
+margin-bottom:8px
+}
+
+/* ===== SUMÁRIO RECOLHÍVEL ===== */
+
+details{
+margin-top:20px;
+border:1px solid #d9d3ff;
+border-radius:12px;
+overflow:hidden;
+background:#faf8ff;
+}
+
+summary{
+background:linear-gradient(90deg,#5b4bc4,#7a6be6);
+color:white;
+padding:14px 18px;
+font-weight:bold;
+cursor:pointer;
+list-style:none;
+border-radius:12px;
+transition:.3s;
+}
+
+summary:hover{
+filter:brightness(1.05);
+}
+
+summary::-webkit-details-marker{
+display:none;
+}
+
+summary::after{
+content:"▼";
+float:right;
+transition:.3s;
+font-size:12px;
+}
+
+details[open] summary::after{
+transform:rotate(180deg);
+}
+
+details p{
+padding:10px 18px;
+border-bottom:1px solid #ece8ff;
+margin:0;
+}
+
+details p:last-child{
+border-bottom:none;
+}
+
+@media(max-width:768px){
+body{
+flex-direction:column
+}
+.sidebar{
+width:100%;
+flex-direction:row;
+justify-content:space-around
+}
+}
+</style>
 </head>
 <body>
 
@@ -46,12 +160,67 @@
 
   
 </div>
+<!--
 
   <div class="card">
     <h2>Tema do Trimestre</h2>
     <p><strong>Entre a verdade e o engano — Combatendo ideologias e ensinos que se opõem à palavra de Deus</strong></p>
     <p><strong>Comentarista:</strong> Eduardo Leandro Alves</p>
   </div>
+  -->
+  <div class="card">
+  <h2>Tema do Trimestre</h2>
+
+  <p>
+    <strong>Entre a verdade e o engano — Combatendo ideologias e ensinos que se opõem à Palavra de Deus</strong>
+  </p>
+
+  <p><strong>Comentarista:</strong> Eduardo Leandro Alves</p>
+
+  <details>
+    <summary><strong>📖 Sumário das Lições (clique para abrir)</strong></summary>
+
+    <p><strong>05/04/2026 — Lição 1</strong><br>
+    O que é uma ideologia</p>
+
+    <p><strong>12/04/2026 — Lição 2</strong><br>
+    A falácia do Materialismo Histórico</p>
+
+    <p><strong>19/04/2026 — Lição 3</strong><br>
+    A falácia do Relativismo Ético-moral</p>
+
+    <p><strong>26/04/2026 — Lição 4</strong><br>
+    A falácia da Ideologia de Gênero</p>
+
+    <p><strong>03/05/2026 — Lição 5</strong><br>
+    A falácia da Teologia Progressista</p>
+
+    <p><strong>10/05/2026 — Lição 6</strong><br>
+    A falácia do Humanismo</p>
+
+    <p><strong>17/05/2026 — Lição 7</strong><br>
+    A falácia da Teoria Darwiniana</p>
+
+    <p><strong>24/05/2026 — Lição 8</strong><br>
+    A falácia do Pragmatismo</p>
+
+    <p><strong>31/05/2026 — Lição 9</strong><br>
+    A falácia do Ateísmo</p>
+
+    <p><strong>07/06/2026 — Lição 10</strong><br>
+    A falácia da Teoria do Deísmo</p>
+
+    <p><strong>14/06/2026 — Lição 11</strong><br>
+    A falácia da Teologia da Prosperidade</p>
+
+    <p><strong>21/06/2026 — Lição 12</strong><br>
+    A falácia do Triunfalismo</p>
+
+    <p><strong>28/06/2026 — Lição 13</strong><br>
+    O discernimento do cristão</p>
+
+  </details>
+</div>
 
   <div class="card">
     <h2>Lição 1: O que é uma Ideologia</h2>
